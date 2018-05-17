@@ -1,40 +1,26 @@
 function checkf() {
-    /* var name = document.getElementById("form_fname").value;
-       var sname = document.getElementById("form_sname").value;
-       var address = document.getElementById("form_address").value;
-       var email = document.getElementById("form_email").value;*/
-    /*if(!name.match(/^[A-Za-zА-Яа-я]+$/)){
-       alert("Невірно введене ім'я!")
-    }
 
-    if(!sname.match(/^[A-Za-zА-Яа-я]+$/)){
-        alert("Невірно введене призвіще!");
-    }
+    validate(form_fname, /^[A-Za-zА-Яа-я]+$/) ? succesMessage(form_fname) : errorMessage(form_fname);
+    validate(form_sname, /^[A-Za-zА-Яа-я]+$/) ? succesMessage(form_sname) : errorMessage(form_sname);
+    validate(form_address, /\d{5}/) ? succesMessage(form_address) : errorMessage(form_address);
+    validate(form_email, '@') ? succesMessage(form_email) : errorMessage(form_email);
 
-    if(!address.match(/\d{5}/)){
-        alert("Невірна адреса!")
-    }
-
-    if(!email.match('@')){
-      alert("Невірно введений email");
-    }*/
-
-    var mid = "form_fname";
-    validate(mid, re);
-    var itemq = document.getElementById("SMT");
-    console.log(itemq);
 }
 
-function validate(id, condition) {
-
-    var item = document.getElementById(id);
+function validate(item, condition) {
     if (!item.value.match(condition)) {
-        item.style.backgroundColor = 'red';
-        item.value = "Невірно введені данні";
+        return false;
     }
     else {
-        console.log(item.id + ": success");
+        return true;
     }
+}
 
+function errorMessage(id) {
+    id.style.border = '1px solid red';
+    id.value = 'Невірно введені дані';
+}
 
+function succesMessage(id) {
+    id.style.border = '1px solid green';
 }
