@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#myBlock {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 124px;
+    left: 555px;
+    background-color: blue;
+    border: 1px solid black;
+}
+
+.sky {
+    width: 50px;
+    height: 25px;
+    background-color: blue;
+}
+
+.field {
+    width: 50px;
+    height: 25px;
+    background-color: yellow;
+
+}
+
+.form-row {
+    margin: 3px;
+    font-size: 20px;
+}
+
+.btn {
+    margin: 3px;
+    width: 175px;
+}
+
+
+
